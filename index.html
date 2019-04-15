@@ -19,28 +19,46 @@
         crossorigin>
     </script>
     
+    <!-- <style> -->
+    <style type="text/css" media="screen">
+      header {
+        text-align: center;
+      }
+      .header-class {
+        font: outline;
+        color: darkslateblue;
+      }
+      .jobs {
+        font: outline;
+        color: darkslateblue;
+      }
+
+    </style>
+
     <script type="text/babel">
         function App(props) {
+            const name=props.name;
             console.log(props)
             return (
                 //header, main, section and address.
                 <main>
                     <header className='header-class'>
-                    Sally's Resume
+                    <h1>{name}'s Resume</h1>
                     </header>
-                    <section>
-                        Sally Smith
-                        sally@thinkful.com
-                        555-111-1212
+                    <section><br/>
+                        {name}<br/>
+                        {props.email}@thinkful.com <br/>
+                        555-111-1212 
+                        <br/>
                         <img src="https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg" />
                         <div>
                             2018 Graduated from Thinkful Engineering Immersion
                         </div>
-                        <div>
-                            2017-2018 CEO of Alphabet
-                                Took over the world with AI.
-                            2016-2017 VP on Website Animation, AirBNB
-                                Made very pleasing CSS transitions for fun and profit
+                        <div className="jobs">
+                            2017-2018 CEO of Alphabet <br/>
+                                Took over the world with AI. <br/>
+                            2016-2017 VP on Website Animation, AirBNB <br/>
+                                Made very pleasing CSS transitions for fun and profit <br/>
                         </div>
                     </section>
                     <address>
@@ -51,8 +69,11 @@
 
         // Nested elements inside the App.
         ReactDOM.render(
-        <App className='my-class'>
-           
+        <App className='my-class'
+        name= "Bobby Sue"
+        email="bobby-sue">
+
+        
         </App>,
         document.querySelector('#application-root')
         );
